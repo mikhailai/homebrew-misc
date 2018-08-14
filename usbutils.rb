@@ -13,6 +13,8 @@ class Usbutils < Formula
   depends_on "pkg-config" => :build
   depends_on "libusb"
 
+  conflicts_with "lsusb", :because => "a fake 'lsusb' command is already installed"
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
