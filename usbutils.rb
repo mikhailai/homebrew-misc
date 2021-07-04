@@ -9,9 +9,9 @@ class Usbutils < Formula
 
   bottle do
     root_url "https://dl.bintray.com/mikhailai/bottles-misc"
-    sha256 "b8de8fc8be85c77d47b3251dc32153a7bcc43fd7b143069c0f9baa6ae0e90208" => :el_capitan
-    sha256 "5e9e8018181e361e61921c4616d3eb0b98691faafce7023e8764f53854b0b53a" => :sierra
-    sha256 "d16701763632378ab44c00efd9067edec9497df38f29365147ce51fe1552b071" => :high_sierra
+    sha256 el_capitan:  "b8de8fc8be85c77d47b3251dc32153a7bcc43fd7b143069c0f9baa6ae0e90208"
+    sha256 sierra:      "5e9e8018181e361e61921c4616d3eb0b98691faafce7023e8764f53854b0b53a"
+    sha256 high_sierra: "d16701763632378ab44c00efd9067edec9497df38f29365147ce51fe1552b071"
   end
 
   depends_on "autoconf" => :build
@@ -20,7 +20,7 @@ class Usbutils < Formula
   depends_on "pkg-config" => :build
   depends_on "libusb"
 
-  conflicts_with "lsusb", :because => "a fake 'lsusb' command is already installed"
+  conflicts_with "lsusb", because: "a fake 'lsusb' command is already installed"
 
   def install
     system "./configure", "--disable-debug",
